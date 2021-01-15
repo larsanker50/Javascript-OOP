@@ -1,8 +1,21 @@
-class Circle {
-    constructor(radius, color, name) {
+class Shape {
+    constructor(color, name) {
+    this.color = color;
+    this.name = name;
+    };
+    nameReturn() {
+        return this.name
+    };
+    colorReturn() {
+        return this.color
+    };
+};
+
+
+class Circle extends Shape {
+    constructor(color, name, radius) {
+        super(color, name)
         this.radius = radius;
-        this.color = color;
-        this.name = name;
     };
     radiusSum() {
         return this.radius;
@@ -10,16 +23,12 @@ class Circle {
     areaSum() {
         return Math.PI * this.radius * this.radius;
     };
-    nameReturn() {
-        return this.name;
-    };
 };
 
-class Square {
-    constructor(size, color, name) {
+class Square extends Shape {
+    constructor(color, name, size) {
+        super(color, name)
         this.size = size;
-        this.color = color;
-        this.name = name;
     };
     sizeSum() {
         return this.size;
@@ -27,17 +36,13 @@ class Square {
     areaSum() {
         return this.size * this.size;
     };
-    nameReturn() {
-        return this.name
-    }
 };
 
-class Rectangle {
-    constructor(width, heigth,  color, name) {
+class Rectangle extends Shape {
+    constructor(color, name, width, heigth) {
+        super(color, name)
         this.width = width;
         this.heigth = heigth;
-        this.color = color;
-        this.name = name;
     };
     widthSum() {
         return this.width;
@@ -48,18 +53,17 @@ class Rectangle {
     areaSum() {
         return this.width * this.heigth;
     };
-    nameReturn() {
-        return this.name
-    }
 };
 
 
-let CircleOne = new Circle (1.5, 'blue', 'CircleOne')
-let CircleTwo = new Circle (10, 'red', 'CircleTwo')
-let CircleThree = new Circle (20, 'yellow', 'CircleThree')
-let SquareOne = new Square (2, 'black', 'SquareOne')
-let SquareTwo = new Square (5, 'green', 'SquareTwo')
-let SquareThree = new Square (100, 'orange', 'Squarethree')
-let RectangleOne = new Rectangle (2, 5, 'black', 'RectangleOne')
-let RectangleTwo = new Rectangle (5, 10, 'green', 'RectangleTwo')
-let RectangleThree = new Rectangle (100, 100, 'orange', 'RectangleThree')
+let CircleOne = new Circle ('blue', 'CircleOne', 1.5)
+let CircleTwo = new Circle ('red', 'CircleTwo', 10)
+let CircleThree = new Circle ('yellow', 'CircleThree', 20)
+
+let SquareOne = new Square ('black', 'SquareOne', 2)
+let SquareTwo = new Square ('green', 'SquareTwo', 5)
+let SquareThree = new Square ('orange', 'Squarethree', 100)
+
+let RectangleOne = new Rectangle ('black', 'RectangleOne', 2, 5,)
+let RectangleTwo = new Rectangle ('green', 'RectangleTwo', 5, 10)
+let RectangleThree = new Rectangle ('orange', 'RectangleThree', 100, 100)
